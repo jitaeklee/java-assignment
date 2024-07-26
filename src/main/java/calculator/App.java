@@ -1,7 +1,8 @@
 package calculator;
-import java.util.Arrays;
-import java.util.Objects;
+import java.util.ArrayList;
 import java.util.Scanner;
+
+
 
 public class App {
 
@@ -9,7 +10,7 @@ public class App {
         Scanner sc = new Scanner(System.in);
         int result = 0;
         int count = 0;
-        int[] resultArr = new int[10];
+        ArrayList<Integer> resultArr = new ArrayList<>();
         boolean stop = false;
 
         while(stop == false) {
@@ -34,28 +35,29 @@ public class App {
                 }
             } else {
                 System.out.println("잘못 입력하셨습니다."); // 그 밖에는 해당 출력
-                System.out.println(Arrays.toString(resultArr));
+                System.out.println(resultArr.toString());
                 break;
             }
-            System.out.println("결과: " + result);
-            if (count <= 9) {
-                resultArr[count] = result;
-                System.out.println(Arrays.toString(resultArr));
-            } else if (count >= 10) {
-                for (int i=0; i<10; i++) {
-                    if (i == 9) {
-                        resultArr[i] = result;
-                    } else {
-                        resultArr[i] = resultArr[i + 1];
-                    }
-                }
-                System.out.println(Arrays.toString(resultArr));
-            }
-            count++;
+            System.out.println("결과 : " + result);
+            resultArr.add(result);
 
+            System.out.println("가장 먼저 저장된 연산 결과를 삭제하시겠습니까? (remove 입력 시 삭제)");
+            String removestr = sc.next();
+            if (removestr.equals("remove")) {
+            resultArr.remove(0);
+            }
+
+            System.out.println("저장된 연산결과를 조회하시겠습니까? (inquiry 입력 시 조회)");
+            String showstr = sc.next();
+            if (showstr.equals("inquiry")) {
+                for(int i:resultArr) {
+                    System.out.print(i + " ");
+                }
+                System.out.println();
+            }
 
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
-            String exitStr = sc.next(); // 종료 여부 입력값 생성
+            String exitStr = sc.next();
             if (exitStr.equals("exit")) {
                 stop = true;
             } else {
