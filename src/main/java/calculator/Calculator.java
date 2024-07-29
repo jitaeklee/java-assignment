@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class Calculator {
     double result;
-    int a = 1;
     public double getResult() {
         return result;
     }

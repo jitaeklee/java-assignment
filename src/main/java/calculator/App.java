@@ -10,7 +10,6 @@ public class App {
         double result = 0;
         ArrayList<Double> resultArr = new ArrayList<>();
         boolean stop = false;
-        int a = 1;
 
         while(stop == false) {
         System.out.print("첫 번째 양의 정수를 입력하세요 : ");
