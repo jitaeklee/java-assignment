@@ -3,10 +3,9 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Calculator {
-    double result;
-    public double getResult() {
-        return result;
-    }
+    private double result = 0;
+    public double getResult() { return result; }
+    public void setResult(double result2) { this.result = result2; }
     // 덧셈 메서드
     public void add(double a, double b) {result = a + b;}
     // 뺄셈 메서드
