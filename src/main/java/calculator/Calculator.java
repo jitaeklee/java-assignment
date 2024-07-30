@@ -19,6 +19,12 @@ public class Calculator {
     public void removeResult() {
         resultArr.remove(0);
     }
+    public void inquiryResults() {
+        for (double i : resultArr) {
+            System.out.print(i + " ");
+        }
+        System.out.println();
+    }
 
     public void add(double a, double b) {
         result = a + b;
