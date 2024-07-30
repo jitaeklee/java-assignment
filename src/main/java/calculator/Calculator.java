@@ -1,10 +1,13 @@
 package calculator;
-
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Calculator {
-    private double result = 0;
+    private double result;
+
+    Calculator() {
+        result = 0;
+    }
 
     public double getResult() {
         return result;
